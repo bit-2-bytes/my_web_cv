@@ -3,6 +3,8 @@ import { Button } from "primereact/button";
 import { Menubar } from "primereact/menubar";
 import styles from "./StandardTemplate.module.css";
 import Home from "./Home";
+import Technologies from "./Technologies";
+import Education from "./Education";
 
 function StandardTemplate({ data }: any) {
   const dynamicRefs = useRef<Array<React.RefObject<HTMLInputElement>>>([]);
@@ -30,13 +32,18 @@ function StandardTemplate({ data }: any) {
   );
   return (
     <>
-      <div className="menu-container" ref={dynamicRefs.current[0]}>
+      <div className="menu-container" >
         <Menubar model={items} start={start} />
       </div>
-      <div className={styles.homeContainer}>
+      <div className={styles.homeContainer} ref={dynamicRefs.current[0]}>
         <Home data={data} />
       </div>
-      <p ref={dynamicRefs.current[2]}>Technologies</p>
+      <div className={styles.homeContainer} ref={dynamicRefs.current[2]}>
+        <Technologies data={data} />
+      </div>
+      <div className={styles.homeContainer} ref={dynamicRefs.current[3]}>
+        <Education data={data} />
+      </div>
     </>
   );
 }

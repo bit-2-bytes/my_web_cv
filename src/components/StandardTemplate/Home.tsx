@@ -1,5 +1,6 @@
 import React from 'react'
 import { TypeAnimation } from 'react-type-animation';
+import Image from 'next/image'
 import styles from "./StandardTemplate.module.css";
 
 function Home({ data }: any) {
@@ -19,7 +20,8 @@ function Home({ data }: any) {
     cursor={true}
     repeat={Infinity}
   />
-  <img src={data.personalDetails.photo} className={styles.photo}/>
+  <Image src={data.personalDetails.photo} className={styles.photo} width={500}
+      height={500} alt="User Photo"/>
   </>
   )
 }

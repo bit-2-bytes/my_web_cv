@@ -20,20 +20,49 @@
     flex-direction: column;
     justify-content: center;
     padding: 30px;
-    height: 100vh !important;
+    min-height: 100vh !important;
     font-size: 25px;
     line-height: 65px;
     text-align: left;
+    background-color: rgba(255, 174, 0, 0.3);
   }
   .photo{
     width: 50vh;
     height: 50vh;
-    border-radius: 50%;
+    border-radius: 10%;
     position: absolute;
     margin-left: 65%;
-    box-shadow: 0 2px 2px #e6e6e6;
+    box-shadow: 0 10px 10px #e6e6e6;
+    border: 5px solid #e6e6e6;
+    transform: skew(-2deg); /* Standard syntax */
+    transform-origin: bottom left; /* Prevent the bottom from shifting */
   }
   .authorIntroduction{
     font-size: 50px;
   }
-
+  .subHeadings{
+    font-size: 35px;
+  }
+  .technologiesContainer{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 60vw;
+    width: 30vw;
+    overflow: auto;
+  }
+  .technologiesChip{
+    margin: 10px;
+  }
+  .educationContainer{
+   margin: 10px;
+  }
+  .educationCard{
+    margin: 10px;
+    line-height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* color: white; */
+    backdrop-filter: blur(5px);
+  }
