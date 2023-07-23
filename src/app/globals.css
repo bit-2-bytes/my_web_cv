@@ -29,6 +29,7 @@
 }
 .p-fieldset .p-fieldset-legend {
   margin-left: 10px;
+  margin-right: 20px;
   background-color: #512E5F !important;
   color: white;
 }

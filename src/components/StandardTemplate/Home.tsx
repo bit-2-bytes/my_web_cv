@@ -18,7 +18,7 @@ function Home({ data }: any) {
   });
   return (
     <>
-    <div className={styles.authorIntroduction}>Hi 👋 I &apos; m {data.personalDetails.username},</div>
+    <div className={styles.authorIntroduction}>Hi 👋 I&apos;m <span className={styles.authorName}>{data.personalDetails.username}</span>,</div>
     <TypeAnimation
     sequence={[
       `Im a ${data.personalDetails.adjectives[0]}`, 

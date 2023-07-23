@@ -5,26 +5,26 @@ import styles from "./StandardTemplate.module.css";
 import Home from "./Home";
 import Technologies from "./Technologies";
 import Education from "./Education";
+import ProffesionalExperience from "./ProffesionalExperience";
 
 function StandardTemplate({ data }: any) {
+  const menubarRef = useRef(null);
   const dynamicRefs = useRef<Array<React.RefObject<HTMLInputElement>>>([]);
   const items: any[] = [{ label: "Home",command :()=>scrollDown(0) }];
-  dynamicRefs.current.push(React.createRef<HTMLInputElement>());
-
   function scrollDown(headingIndex : number) {
-    console.log(dynamicRefs.current[headingIndex]);
+    dynamicRefs.current.push(React.createRef<HTMLInputElement>());
     window.scrollTo({
-      top: dynamicRefs.current[headingIndex].current!.offsetTop,
+      top: dynamicRefs.current[headingIndex].current!.offsetTop-(window.innerHeight * 0.1),
       behavior: 'smooth',
     });
 
   }
-
+  
   Object.keys(data).forEach((heading: string, index: number) => {
     if (heading !== "resumeConfig" && heading !== "personalDetails") {
       items.push({ label: heading, command :()=>scrollDown(index)});
-      dynamicRefs.current.push(React.createRef<HTMLInputElement>());
     }
+    dynamicRefs.current.push(React.createRef<HTMLInputElement>());
   });
 
   const start = (
@@ -32,8 +32,8 @@ function StandardTemplate({ data }: any) {
   );
   return (
     <>
-      <div className="menu-container" >
-        <Menubar model={items} start={start} />
+      <div >
+        <Menubar  model={items} start={start}  ref={menubarRef}/>
       </div>
       <div className={styles.homeContainer} ref={dynamicRefs.current[0]}>
         <Home data={data} />
@@ -43,6 +43,9 @@ function StandardTemplate({ data }: any) {
       </div>
       <div className={styles.homeContainer} ref={dynamicRefs.current[3]}>
         <Education data={data} />
+      </div>
+      <div className={styles.homeContainer} ref={dynamicRefs.current[4]}>
+        <ProffesionalExperience data={data} />
       </div>
     </>
   );

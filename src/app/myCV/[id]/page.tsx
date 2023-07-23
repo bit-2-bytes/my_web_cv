@@ -28,21 +28,25 @@ function MyCV({ params }: { params: { id: string } }) {
       degree :"B.Tech",
       institution: "Anna University",
       year : "2017-2021",
+      specialisation:"Mechanical",
       achievements :["university topper in 10 subjects","university topper in 10 subjects"]
     },{
       degree :"B.Tech",
       institution: "Anna University",
       year : "2017-2021",
+      specialisation:"Mechanical",
       achievements :["university topper in 10 subjects","university topper in 10 subjects"]
     },],
     "Professional Experience":[{
-      institution: "Anna University",
+      organisation: "Anna University",
+      role:"student",
       year : "2017-2021",
-      achievements :["university topper in 10 subjects","university topper in 10 subjects"]
+      "project details" :["university topper in 10 subjects","university topper in 10 subjects"]
     },{
-      institution: "Anna University",
+      organisation: "Anna University",
+      role:"student",
       year : "2017-2021",
-      achievements :["university topper in 10 subjects","university topper in 10 subjects"]
+      "project details" :["university topper in 10 subjects","university topper in 10 subjects"]
     }]
   });
   // useEffect(() => {getResumeData(params.id);},[])
