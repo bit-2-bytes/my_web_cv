@@ -27,7 +27,11 @@
 .p-menubar .p-menuitem-link .p-menuitem-text, .p-menubar-button{
     color: white !important;
 }
-
+.p-fieldset .p-fieldset-legend {
+  margin-left: 10px;
+  background-color: #512E5F !important;
+  color: white;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

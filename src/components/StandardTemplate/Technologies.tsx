@@ -3,9 +3,11 @@ import React from "react";
 import styles from "./StandardTemplate.module.css";
 import { Chip } from "primereact/chip";
 import Image from "next/image";
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+
 function Technologies({ data }: any) {
-
-
   const colors = [
     '#6C3483', // Royal Purple
     '#512E5F', // Dark Purple
@@ -20,11 +22,28 @@ function Technologies({ data }: any) {
   ];
 
   const getRandomColor = (index:number) => {
-    return colors[index];
+    return colors[index%10];
   };
+
+  const slideInLeftVariants = {
+    hidden: { x: -100, opacity: 0 },
+    visible: { x: 0, opacity: 1 }
+  };
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2
+  });
 
   return (
     <>
+     <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={slideInLeftVariants}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className={styles.subHeadings}>
         Here is what I have learnt over the years!
       </div>
@@ -34,6 +53,7 @@ function Technologies({ data }: any) {
         height={500}
         alt="Technologies svg"
       />
+     </motion.div>
       <div className={styles.technologiesContainer}>
         {data.Technologies.map((tech: any, index: any) => (
           <Chip
@@ -48,6 +68,7 @@ function Technologies({ data }: any) {
           ></Chip>
         ))}
       </div>
+      
     </>
   );
 }
