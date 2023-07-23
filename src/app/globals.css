@@ -13,8 +13,9 @@
     /* border: 0px; */
     position: fixed;
     width: 100vw;
-    background-color: #996901;
-    border: 0px;
+    background-color: #512E5F !important;
+    border: 0px !important;
+    border-radius: 0px !important;
     color: white;
     z-index: 999;
     box-shadow: 0 2px 2px #e6e6e6;
@@ -40,13 +41,13 @@
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #996901; 
+    background: #512E5F; 
     border-radius: 10px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #b30000; 
+    background: #512e5f73; 
   }
 
 

@@ -10,10 +10,10 @@ function Education({ data }: any) {
     <>
     <div className={styles.subHeadings}>My Educational Summary</div>
     <div className={styles.educationContainer}>
-    {data.Education.map((course: any)=>(
-        <Fieldset legend={course.degree+"-"+course.institution + "("+course.year+")"} className={styles.educationCard} > 
-        {course.achievements.map((achievement: any)=>(
-            <li>{achievement}</li>
+    {data.Education.map((course: any, index: any)=>(
+        <Fieldset key={index} legend={course.degree+"-"+course.institution + "("+course.year+")"} className={styles.educationCard} > 
+        {course.achievements.map((achievement: any, index: any)=>(
+            <li key={index}>{achievement}</li>
         ))}
         </Fieldset>
     ))}
