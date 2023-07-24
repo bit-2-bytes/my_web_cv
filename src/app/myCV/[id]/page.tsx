@@ -47,6 +47,25 @@ function MyCV({ params }: { params: { id: string } }) {
       role:"student",
       year : "2017-2021",
       "project details" :["university topper in 10 subjects","university topper in 10 subjects"]
+    }],
+    Award:[{
+      name:"main award",
+      description : "For being good",
+      year:"2018"
+    },
+    {
+      name:"main award",
+      description : "For being good",
+      year:"2018"
+    },{
+      name:"main award",
+      description : "For being good",
+      year:"2018"
+    },
+    {
+      name:"main award",
+      description : "For being good",
+      year:"2018"
     }]
   });
   // useEffect(() => {getResumeData(params.id);},[])

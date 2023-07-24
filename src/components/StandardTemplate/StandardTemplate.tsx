@@ -6,6 +6,7 @@ import Home from "./Home";
 import Technologies from "./Technologies";
 import Education from "./Education";
 import ProffesionalExperience from "./ProffesionalExperience";
+import Awards from "./Awards";
 
 function StandardTemplate({ data }: any) {
   const menubarRef = useRef(null);
@@ -46,6 +47,9 @@ function StandardTemplate({ data }: any) {
       </div>
       <div className={styles.homeContainer} ref={dynamicRefs.current[4]}>
         <ProffesionalExperience data={data} />
+      </div>
+      <div className={styles.homeContainer} ref={dynamicRefs.current[5]}>
+        <Awards data={data} />
       </div>
     </>
   );
