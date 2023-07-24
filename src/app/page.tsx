@@ -23,7 +23,7 @@ export default function Home() {
         <h1 className={styles.heading}>Portfolion</h1>
           <div className={styles.appContents}>
             <h1 className={styles.appHeading}>Portfolion</h1>
-        <p>
+        <p className={styles.paragraph}>
           A no code Web based portfolio creator for all professionals and
           graduates. 
         </p>

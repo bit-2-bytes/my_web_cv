@@ -68,33 +68,33 @@
 }
 
 .lottiePlayer{
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 10vh;
+  margin-top: 10vh !important;
+  top: 20vh;
   width: 50vw;
-  height: 50vh;
+  height: 60vh;
 }
 
 .innerContents{
   display: flex;
+  height: 100%;
 }
 .appContents{
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   justify-content: center;
   margin-left: 10vw;
-  margin-top: 10vh;
+  margin-top: -10vh;
   font-size: 20px;
 }
 .heading{
   font-size: 30px;
   font-family: Agustina Regular;
   position: absolute;
-  top : 0;
-  left: 10px;
+  left: 20px;
 }
 .appHeading{
  font-size: 60px;
+ line-height: 120px;
 }
 .button{
   background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
@@ -125,4 +125,7 @@
  bottom: 10px;
  width: 100%;
  text-align: center;
+}
+.paragraph{
+  margin: 20px 0  20px;
 }
