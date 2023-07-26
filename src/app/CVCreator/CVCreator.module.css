@@ -39,6 +39,7 @@
     backdrop-filter: blur(0.5px);
     border-radius: 10px;
     color: rgb(207, 207, 208);
+    padding: 15px;
 }
 .forms{
     display: flex;
@@ -66,7 +67,7 @@
    transform: scale(1.05);
 }
 
-.menuIconSselected{
+.menuIconSelected{
     background-color: rgba(184, 184, 184, 0.37);
     color: white;
     width: 80px ;

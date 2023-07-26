@@ -54,7 +54,39 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #512e5f73; 
   }
+  .p-inputtext {
+    background-color: rgba(184, 184, 184, 0.37);
+    color: white;
+    border: none;
+    margin: 10px;
+  }
 
-
-  
+  ::placeholder {
+    color: rgba(212, 211, 211, 0.37);
+  }
+  .saveButton{
+    position: absolute;
+    top:5px;
+    height: 50px;
+    background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 50%;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 50px;
+    cursor: pointer;
+    text-align:center;
+    transition: all .4s ease-in-out;
+    background-size: 300% 100%;
+  }
+  .saveButton:hover {
+    background-position: 100% 0;
+  }
+  .saveButtonContainer{
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+  }
   

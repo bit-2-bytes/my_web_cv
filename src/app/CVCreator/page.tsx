@@ -4,12 +4,64 @@ import styles from ".././page.module.css";
 import cvstyles from "./CVCreator.module.css";
 import axios from "axios";
 import { useState } from "react";
-import { InputText } from 'primereact/inputtext';
-import { InputNumber } from 'primereact/inputnumber';
+import { Formik, Form } from 'formik';
+import Profile from "@/components/Form/Profile/Profile";
 
 function CVCreator() {
   const router = useRouter();
   const [selectedMenu, setSelectedMenu] = useState("Profile Section");
+  const handleSubmit = (values:any) => {
+   console.log(values);
+   // You can perform any actions with the form data here, like saving to a database, etc.
+ };
+  const initialValues = {
+   resumeConfig: {
+     color: 'blue',
+     template: 'standard',
+   },
+   personalDetails: {
+     username: '',
+     adjectives: ['', '', ''],
+     photo: '',
+     designation: '',
+     organisation: '',
+     email: '',
+     phoneNumber: '',
+     address: '',
+     linkedin: '',
+     github: '',
+     stackoverflow: '',
+     leetcode: '',
+   },
+   Technologies: [''],
+   Education: [
+     {
+       degree: '',
+       institution: '',
+       year: '',
+       specialisation: '',
+       achievements: [''],
+     },
+     // Add more education data here
+   ],
+   "Professional Experience": [
+     {
+       organisation: '',
+       role: '',
+       year: '',
+       "project details": [''],
+     },
+     // Add more experience data here
+   ],
+   Award: [
+     {
+       name: '',
+       description: '',
+       year: '',
+     },
+     // Add more award data here
+   ],
+ };
   async function showWebCV() {
     // await axios.put('/api/updateData/',{
     //     "_id" : userId,
@@ -27,7 +79,7 @@ function CVCreator() {
             <div
               className={
                 selectedMenu == "Profile Section"
-                  ? cvstyles.menuIconSselected
+                  ? cvstyles.menuIconSelected
                   : cvstyles.menuIcons
               }
               onClick={() => setSelectedMenu("Profile Section")}
@@ -38,7 +90,7 @@ function CVCreator() {
             <div
               className={
                 selectedMenu == "Education Details"
-                  ? cvstyles.menuIconSselected
+                  ? cvstyles.menuIconSelected
                   : cvstyles.menuIcons
               }
               onClick={() => setSelectedMenu("Education Details")}
@@ -49,7 +101,7 @@ function CVCreator() {
             <div
               className={
                 selectedMenu == "Technical Skills"
-                  ? cvstyles.menuIconSselected
+                  ? cvstyles.menuIconSelected
                   : cvstyles.menuIcons
               }
               onClick={() => setSelectedMenu("Technical Skills")}
@@ -60,7 +112,7 @@ function CVCreator() {
             <div
               className={
                 selectedMenu == "Proffesional Experience"
-                  ? cvstyles.menuIconSselected
+                  ? cvstyles.menuIconSelected
                   : cvstyles.menuIcons
               }
               onClick={() => setSelectedMenu("Proffesional Experience")}
@@ -71,7 +123,7 @@ function CVCreator() {
             <div
               className={
                 selectedMenu == "Trainings & Certifications"
-                  ? cvstyles.menuIconSselected
+                  ? cvstyles.menuIconSelected
                   : cvstyles.menuIcons
               }
               onClick={() => setSelectedMenu("Trainings & Certifications")}
@@ -82,7 +134,7 @@ function CVCreator() {
             <div
               className={
                 selectedMenu == "Awards & Glory"
-                  ? cvstyles.menuIconSselected
+                  ? cvstyles.menuIconSelected
                   : cvstyles.menuIcons
               }
               onClick={() => setSelectedMenu("Awards & Glory")}
@@ -93,7 +145,7 @@ function CVCreator() {
             <div
               className={
                 selectedMenu == "Personal Projects"
-                  ? cvstyles.menuIconSselected
+                  ? cvstyles.menuIconSelected
                   : cvstyles.menuIcons
               }
               onClick={() => setSelectedMenu("Personal Projects")}
@@ -106,22 +158,25 @@ function CVCreator() {
             </div>
           </div>
           <div className={cvstyles.formContainer}>
-            <div className={cvstyles.formHeading}>{selectedMenu}</div>
-            <div className={cvstyles.formFields}>
-              {selectedMenu == "Profile Section" ? (
-                <div>Profile Section
-                   <div className="p-inputgroup flex-1">
-                <span className="p-inputgroup-addon">
-                    <i className="pi pi-user"></i>
-                </span>
-                <InputText placeholder="Username" />
+            <div className={cvstyles.formHeading}>
+               {selectedMenu}
+               <div className="saveButtonContainer">
+      <button className="saveButton" onClick={handleSubmit}><i className="pi pi-save" style={{ fontSize: "1.5rem" }}></i></button>
+      </div>
             </div>
-                </div>
+            <div className={cvstyles.formFields}>
+            <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Form>
+      
+              {selectedMenu == "Profile Section" ? (
+                 <Profile handleSubmit={handleSubmit}/>
               ) : selectedMenu == "Education Details" ? (
                 <div>Education Details</div>
               ) : (
                 <div>This feature is still under development</div>
               )}
+            </Form>
+    </Formik>
             </div>
           </div>
         </div>
