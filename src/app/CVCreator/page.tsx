@@ -6,62 +6,63 @@ import axios from "axios";
 import { useState } from "react";
 import { Formik, Form } from 'formik';
 import Profile from "@/components/Form/Profile/Profile";
+import Technologies from "@/components/Form/Technologies/Technologies";
 
 function CVCreator() {
   const router = useRouter();
   const [selectedMenu, setSelectedMenu] = useState("Profile Section");
-  const handleSubmit = (values:any) => {
-   console.log(values);
-   // You can perform any actions with the form data here, like saving to a database, etc.
- };
+  const handleSubmit = (values: any) => {
+    console.log(values);
+    // You can perform any actions with the form data here, like saving to a database, etc.
+  };
   const initialValues = {
-   resumeConfig: {
-     color: 'blue',
-     template: 'standard',
-   },
-   personalDetails: {
-     username: '',
-     adjectives: ['', '', ''],
-     photo: '',
-     designation: '',
-     organisation: '',
-     email: '',
-     phoneNumber: '',
-     address: '',
-     linkedin: '',
-     github: '',
-     stackoverflow: '',
-     leetcode: '',
-   },
-   Technologies: [''],
-   Education: [
-     {
-       degree: '',
-       institution: '',
-       year: '',
-       specialisation: '',
-       achievements: [''],
-     },
-     // Add more education data here
-   ],
-   "Professional Experience": [
-     {
-       organisation: '',
-       role: '',
-       year: '',
-       "project details": [''],
-     },
-     // Add more experience data here
-   ],
-   Award: [
-     {
-       name: '',
-       description: '',
-       year: '',
-     },
-     // Add more award data here
-   ],
- };
+    resumeConfig: {
+      color: 'blue',
+      template: 'standard',
+    },
+    personalDetails: {
+      username: '',
+      adjectives: ['', '', ''],
+      photo: '',
+      designation: '',
+      organisation: '',
+      email: '',
+      phoneNumber: '',
+      address: '',
+      linkedin: '',
+      github: '',
+      stackoverflow: '',
+      leetcode: '',
+    },
+    Technologies: [''],
+    Education: [
+      {
+        degree: '',
+        institution: '',
+        year: '',
+        specialisation: '',
+        achievements: [''],
+      },
+      // Add more education data here
+    ],
+    "Professional Experience": [
+      {
+        organisation: '',
+        role: '',
+        year: '',
+        "project details": [''],
+      },
+      // Add more experience data here
+    ],
+    Award: [
+      {
+        name: '',
+        description: '',
+        year: '',
+      },
+      // Add more award data here
+    ],
+  };
   async function showWebCV() {
     // await axios.put('/api/updateData/',{
     //     "_id" : userId,
@@ -157,28 +158,34 @@ function CVCreator() {
               Projects
             </div>
           </div>
-          <div className={cvstyles.formContainer}>
-            <div className={cvstyles.formHeading}>
-               {selectedMenu}
-               <div className="saveButtonContainer">
-      <button className="saveButton" onClick={handleSubmit}><i className="pi pi-save" style={{ fontSize: "1.5rem" }}></i></button>
-      </div>
-            </div>
-            <div className={cvstyles.formFields}>
-            <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-      <Form>
-      
-              {selectedMenu == "Profile Section" ? (
-                 <Profile handleSubmit={handleSubmit}/>
-              ) : selectedMenu == "Education Details" ? (
-                <div>Education Details</div>
-              ) : (
-                <div>This feature is still under development</div>
-              )}
+          <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+            {({ setFieldValue }) => (
+            <Form>
+              <div className={cvstyles.formContainer}>
+                <div className={cvstyles.formHeading}>
+                  {selectedMenu}
+                  <div className="saveButtonContainer">
+                    <button type="submit" className="saveButton"><i className="pi pi-save" style={{ fontSize: "1.5rem" }}></i></button>
+                  </div>
+                </div>
+                <div className={cvstyles.formFields}>
+
+
+
+                  {selectedMenu == "Profile Section" ? (
+                    <Profile setFieldValue={setFieldValue}/>
+                  ) : selectedMenu == "Technical Skills" ? (
+                    <Technologies/>
+                  ) : (
+                    <div>This feature is still under development</div>
+                  )}
+
+                </div>
+              </div>
+              
             </Form>
-    </Formik>
-            </div>
-          </div>
+            )}
+          </Formik>
         </div>
       </div>
     </>

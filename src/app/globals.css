@@ -55,14 +55,25 @@
     background: #512e5f73; 
   }
   .p-inputtext {
-    background-color: rgba(184, 184, 184, 0.37);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     color: white;
     border: none;
     margin: 10px;
+    width: 300px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   }
-
+  .p-inputtextarea{
+    min-height: 100px;
+  }
+  .p-inputtext:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5) !important;
+  }
   ::placeholder {
-    color: rgba(212, 211, 211, 0.37);
+    color: rgba(255, 255, 255, 0.7);
   }
   .saveButton{
     position: absolute;
@@ -86,7 +97,45 @@
   }
   .saveButtonContainer{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-right: 10px;
   }
-  
+/* Styles for the file input */
+.file-input {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Styles for the file upload container */
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.upload-container:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Styles for the file upload label */
+.upload-label {
+  text-align: center;
+}
+.p-sameline{
+  display: flex;
+  align-items: center;
+}
