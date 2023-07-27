@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Formik, Form } from 'formik';
 import Profile from "@/components/Form/Profile/Profile";
 import Technologies from "@/components/Form/Technologies/Technologies";
+import Education from "@/components/Form/Education/Education";
 
 function CVCreator() {
   const router = useRouter();
@@ -41,7 +42,7 @@ function CVCreator() {
         institution: '',
         year: '',
         specialisation: '',
-        achievements: [''],
+        achievements: '',
       },
       // Add more education data here
     ],
@@ -176,7 +177,9 @@ function CVCreator() {
                     <Profile setFieldValue={setFieldValue}/>
                   ) : selectedMenu == "Technical Skills" ? (
                     <Technologies values={values}/>
-                  ) : (
+                  ) : selectedMenu == "Education Details" ? (
+                    <Education values={values}/>
+                  ) :(
                     <div>This feature is still under development</div>
                   )}
 

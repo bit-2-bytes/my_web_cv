@@ -138,9 +138,11 @@
 .p-sameline{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-/* Styles for the delete button */
+
+/* Styles for the delete button
 .p-button-delete {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
@@ -153,7 +155,7 @@
 .p-button-delete:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.5);
-}
+} */
 
 /* Styles for the add button */
 .p-button-add {
@@ -168,4 +170,60 @@
 .p-button-add:hover {
   background-color: rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Styles for the glassmorphism accordion */
+.p-accordion {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: none !important;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  overflow: hidden; /* Hide any overflow from the blur effect */
+}
+
+/* Styles for the accordion header and icon */
+.p-accordion-header {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+
+.p-accordion-header .p-accordion-header-link {
+  color: white !important;
+}
+.p-accordion .p-accordion-content{
+  color: white !important;
+}
+
+.p-accordion-header .pi.pi-chevron-right,
+.p-accordion-header .pi.pi-chevron-down {
+  color: white !important;
+}
+
+/* Styles for the accordion content */
+.p-accordion-content {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: none !important;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+/* Styles for the input text fields inside the accordion */
+.p-accordion-content input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.p-accordion .p-accordion-header .p-accordion-header-link{
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: none !important;
 }

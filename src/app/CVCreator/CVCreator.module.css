@@ -66,6 +66,7 @@
 .menuIcons:hover{
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .menuIconSelected{
@@ -89,4 +90,5 @@
 .menuIconSelected:hover{
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }

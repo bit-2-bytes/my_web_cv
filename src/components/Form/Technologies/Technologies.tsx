@@ -24,6 +24,7 @@ function Technologies({ values }: any) {
 
                 <Button
                   icon="pi pi-trash"
+                  severity="danger" text
                   className="p-button-delete"
                   onClick={() => handleRemove(remove, index)}
                 />
