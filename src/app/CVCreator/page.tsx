@@ -159,7 +159,7 @@ function CVCreator() {
             </div>
           </div>
           <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-            {({ setFieldValue }) => (
+            {({ values, setFieldValue }) => (
             <Form>
               <div className={cvstyles.formContainer}>
                 <div className={cvstyles.formHeading}>
@@ -175,7 +175,7 @@ function CVCreator() {
                   {selectedMenu == "Profile Section" ? (
                     <Profile setFieldValue={setFieldValue}/>
                   ) : selectedMenu == "Technical Skills" ? (
-                    <Technologies/>
+                    <Technologies values={values}/>
                   ) : (
                     <div>This feature is still under development</div>
                   )}
