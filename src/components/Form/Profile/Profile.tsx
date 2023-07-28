@@ -20,6 +20,7 @@ function Profile({setFieldValue}:any) {
 
   return (
     <>
+    <div className='p-sameline'>
     <div className="p-field">
         <label htmlFor="username" >Full Name</label>
         <Field type="text" id="username" placeholder='Eg: Ajai S S' name="personalDetails.username" as={InputText} />
@@ -32,10 +33,7 @@ function Profile({setFieldValue}:any) {
         <label htmlFor="designation" >Designation</label>
         <Field type="text" id="designation" placeholder='Eg: Software Engineer' name="personalDetails.designation" as={InputText} />
       </div>
-      <div className="p-field p-sameline">
-        <label htmlFor="address" >Address</label>
-        <Field type="text" id="address" placeholder='Eg: Chennai, India' name="personalDetails.address" as={InputTextarea} />
-      </div>
+
       <div className="p-field">
         <label htmlFor="adjectives">Phrases suitable to your work & you</label>
         <Field type="text" id="adjectives" placeholder='Eg: Continuous learner' name="personalDetails.adjectives[0]" as={InputText} />
@@ -56,6 +54,10 @@ function Profile({setFieldValue}:any) {
             />
             </label> 
           </div>
+      <div className="p-field p-sameline">
+        <label htmlFor="address" >Address</label>
+        <Field type="text" id="address" placeholder='Eg: Chennai, India' name="personalDetails.address" as={InputTextarea} />
+      </div>
           <div className="p-field">
         <label htmlFor="email" >Email</label>
         <Field type="text" id="email" placeholder='Eg: abc123@gmail.com' name="personalDetails.email" as={InputText} />
@@ -80,7 +82,7 @@ function Profile({setFieldValue}:any) {
         <label htmlFor="stackoverflow" >Stackoverflow</label>
         <Field type="text" id="stackoverflow" placeholder='Eg: https://stackoverflow.com/users/18642316/ajai-s' name="personalDetails.stackoverflow" as={InputText} />
       </div>
-      
+      </div>
     </>
   )
 }
