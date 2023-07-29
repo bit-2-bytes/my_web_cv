@@ -15,7 +15,7 @@ function Technologies({ values }: any) {
   return (
     <>
       <p>List Down the all technologies you know( *Max 10)</p>
-      <FieldArray name="Technologies">
+      <FieldArray name="Technologies" >
         {({ push, remove }: any) => (
           <>
             {values.Technologies.map((value: any, index: number) => (
@@ -28,12 +28,18 @@ function Technologies({ values }: any) {
                   className="p-button-delete"
                   onClick={() => handleRemove(remove, index)}
                 />
-              </div>
-            ))}
-
             <Button
               icon="pi pi-plus"
               className="p-button-add"
+              style={{display : index ===values.Technologies.length-1? "block" : "none"}}
+              onClick={() => handleAdd(push, "")}
+            />
+              </div>
+            ))}
+<Button
+              icon="pi pi-plus"
+              className="p-button-add"
+              style={{display : values.Technologies.length=== 0? "block" : "none"}}
               onClick={() => handleAdd(push, "")}
             />
           </>

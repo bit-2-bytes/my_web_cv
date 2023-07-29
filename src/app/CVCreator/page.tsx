@@ -8,6 +8,10 @@ import { Formik, Form } from 'formik';
 import Profile from "@/components/Form/Profile/Profile";
 import Technologies from "@/components/Form/Technologies/Technologies";
 import Education from "@/components/Form/Education/Education";
+import Awards from "@/components/Form/Awards/Awards";
+import Certificates from "@/components/Form/Certificates/Certificates";
+import Experience from "@/components/Form/Experience/Experience";
+import Projects from "@/components/Form/Projects/Projects";
 
 function CVCreator() {
   const router = useRouter();
@@ -51,7 +55,7 @@ function CVCreator() {
         organisation: '',
         role: '',
         year: '',
-        "project details": [''],
+        "project details": '',
       },
       // Add more experience data here
     ],
@@ -62,7 +66,21 @@ function CVCreator() {
         year: '',
       },
       // Add more award data here
-    ],
+    ],Certificates: [
+      {
+        name: '',
+        description: '',
+        year: '',
+      },
+      // Add more award data here
+    ],Projects: [
+      {
+        name: '',
+        description: '',
+        year: '',
+      },
+      // Add more award data here
+    ]
   };
   async function showWebCV() {
     // await axios.put('/api/updateData/',{
@@ -179,6 +197,14 @@ function CVCreator() {
                     <Technologies values={values}/>
                   ) : selectedMenu == "Education Details" ? (
                     <Education values={values}/>
+                  ) : selectedMenu == "Awards & Glory" ? (
+                    <Awards values={values}/>
+                  ) : selectedMenu == "Trainings & Certifications" ? (
+                    <Certificates values={values}/>
+                  ) :selectedMenu == "Proffesional Experience" ? (
+                    <Experience values={values}/>
+                  ) :selectedMenu == "Personal Projects" ? (
+                    <Projects values={values}/>
                   ) :(
                     <div>This feature is still under development</div>
                   )}
