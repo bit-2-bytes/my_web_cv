@@ -24,7 +24,7 @@ function Projects({ values }: any) {
           <>
             <Accordion activeIndex={0}>
               {values.Projects.map((value: any, index: number) => (
-                <AccordionTab header={`Projects-${index + 1}`} key={`Projects-${index + 1}`}>
+                <AccordionTab header={`Project-${index + 1}`} key={`Projects-${index + 1}`}>
                   <div key={index} className="p-sameline">
                     <div className="p-field">
                       <label htmlFor="name">Name</label>

@@ -3,7 +3,7 @@ import StandardTemplate from '../StandardTemplate/StandardTemplate'
 
 function WebCVConfiguration({ data} : any) {
   return (
-    data.resumeConfig.template === "standard" ? <StandardTemplate data={data}/> :<></>
+    data.resumeConfig?.template! === "standard" ? <StandardTemplate data={data}/> :<></>
     
   )
 }

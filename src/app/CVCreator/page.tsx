@@ -16,11 +16,14 @@ import Projects from "@/components/Form/Projects/Projects";
 function CVCreator() {
   const router = useRouter();
   const [selectedMenu, setSelectedMenu] = useState("Profile Section");
-  const handleSubmit = (values: any) => {
-    console.log(values);
-    // You can perform any actions with the form data here, like saving to a database, etc.
+  const handleSubmit = async (values: any) => {
+     await axios.put('/api/updateData/', values)
+     .then(()=>{
+      router.push('/myCV/'+123);
+    })
   };
   const initialValues = {
+    "_id" : 123,
     resumeConfig: {
       color: 'blue',
       template: 'standard',
@@ -184,7 +187,7 @@ function CVCreator() {
                 <div className={cvstyles.formHeading}>
                   {selectedMenu}
                   <div className="saveButtonContainer">
-                    <button type="submit" className="saveButton"><i className="pi pi-save" style={{ fontSize: "1.5rem" }}></i></button>
+                    <button type="submit" className="saveButton">Save and Publish</button>
                   </div>
                 </div>
                 <div className={cvstyles.formFields}>

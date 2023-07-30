@@ -64,23 +64,23 @@ function Profile({setFieldValue}:any) {
       </div>
       <div className="p-field">
         <label htmlFor="phoneNumber" >Phone Number</label>
-        <Field type="text" id="phoneNumber" placeholder='Eg: +91 75989 91940' name="personalDetails.phoneNumber" as={InputText} />
+        <Field type="text" id="phoneNumber" placeholder='Eg: +91 12345 67890' name="personalDetails.phoneNumber" as={InputText} />
       </div>
       <div className="p-field">
         <label htmlFor="linkedin" >Linkedin</label>
-        <Field type="text" id="linkedin" placeholder='Eg: https://www.linkedin.com/in/ajai-s-s/' name="personalDetails.linkedin" as={InputText} />
+        <Field type="text" id="linkedin" placeholder='Eg: https://www.linkedin.com/in/123/' name="personalDetails.linkedin" as={InputText} />
       </div>
       <div className="p-field">
         <label htmlFor="github" >Github</label>
-        <Field type="text" id="github" placeholder='Eg: https://github.com/bit-2-bytes' name="personalDetails.github" as={InputText} />
+        <Field type="text" id="github" placeholder='Eg: https://github.com/123' name="personalDetails.github" as={InputText} />
       </div>
       <div className="p-field">
         <label htmlFor="leetcode" >Leetcode</label>
-        <Field type="text" id="leetcode" placeholder='Eg: https://leetcode.com/ajaiss1714/' name="personalDetails.leetcode" as={InputText} />
+        <Field type="text" id="leetcode" placeholder='Eg: https://leetcode.com/123/' name="personalDetails.leetcode" as={InputText} />
       </div>
       <div className="p-field">
         <label htmlFor="stackoverflow" >Stackoverflow</label>
-        <Field type="text" id="stackoverflow" placeholder='Eg: https://stackoverflow.com/users/18642316/ajai-s' name="personalDetails.stackoverflow" as={InputText} />
+        <Field type="text" id="stackoverflow" placeholder='Eg: https://stackoverflow.com/users/123' name="personalDetails.stackoverflow" as={InputText} />
       </div>
       </div>
     </>

@@ -24,7 +24,7 @@ function Certificates({ values }: any) {
           <>
             <Accordion activeIndex={0}>
               {values.Certificates.map((value: any, index: number) => (
-                <AccordionTab header={`Certificates-${index + 1}`} key={`Certificates-${index + 1}`}>
+                <AccordionTab header={`Certificate-${index + 1}`} key={`Certificates-${index + 1}`}>
                   <div key={index} className="p-sameline">
                     <div className="p-field">
                       <label htmlFor="name">Name</label>

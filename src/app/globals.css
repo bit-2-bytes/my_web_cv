@@ -85,11 +85,12 @@
     background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
     box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    border-radius: 50%;
+    border-radius: 5px;
+    font-size: 16px;
     border: none;
     color: white;
     padding: 10px;
-    width: 50px;
+    width: max-content;
     cursor: pointer;
     text-align:center;
     transition: all .4s ease-in-out;
@@ -101,7 +102,7 @@
   .saveButtonContainer{
     display: flex;
     justify-content: flex-end;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 /* Styles for the file input */
 .file-input {
@@ -187,7 +188,7 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
   padding: 0.5rem;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 /* Styles for the accordion header and icon */

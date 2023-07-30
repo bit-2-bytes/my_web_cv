@@ -27,9 +27,9 @@ function ProffesionalExperience({ data }: any) {
         return (
          <Fieldset legend={item.role+"-"+item.organisation} className={styles.educationCard}>
             <legend className={styles.educationYear}>{item.year}</legend>
-            {item["project details"].map((project:any,index:number)=>(
+            {/* {item["project details"].map((project:any,index:number)=>(
                 <li key={index}>{project}</li>
-            ))}
+            ))} */}
          </Fieldset>
         );
       };

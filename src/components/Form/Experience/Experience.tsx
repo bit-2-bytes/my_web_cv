@@ -40,7 +40,7 @@ function Experience({ values }: any) {
                       <Field
                         as={InputText}
                         name={`Professional Experience.${index}.role`}
-                        placeholder="Eg: Indian Institute of Technology"
+                        placeholder="Eg: Senior Manager"
                       />
                     </div>
                     <div className="p-field">

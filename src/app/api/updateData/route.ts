@@ -7,13 +7,15 @@ connect();
 
 export async function PUT(request: NextRequest){
   const reqBody = await request.json();
-  const { _id, username } = reqBody;
+  const { _id } = reqBody;
   let user = await User.findById(_id);
   if (user) {
-    user.username = username;
+    user = await User.findByIdAndUpdate(_id, reqBody, { new: true });
   } else {
-    user = new User({ _id, username });
+    user = await new User(reqBody).save();
   }
-  const savedUser = await user.save();
-  return NextResponse.json(savedUser, { status: 201 });
+  
+  
+  
+  return NextResponse.json("user saved", { status: 201 });
 };

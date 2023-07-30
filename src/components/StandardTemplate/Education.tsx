@@ -30,9 +30,9 @@ function Education({ data }: any) {
     {data.Education.map((course: any, index: any)=>(
         <Fieldset key={index} legend={course.degree+"-"+course.specialisation } className={styles.educationCard} > 
         <legend className={styles.educationYear}>{course.institution+ "("+course.year+")"}</legend> 
-        {course.achievements.map((achievement: any, index: any)=>(
+        {/* {course.achievements.map((achievement: any, index: any)=>(
             <li key={index}>{achievement}</li>
-        ))}
+        ))} */}
         </Fieldset>
     ))}
     </div>
