@@ -10,22 +10,24 @@ import Awards from "./Awards";
 
 function StandardTemplate({ data }: any) {
   const menubarRef = useRef(null);
-  const dynamicRefs = useRef<Array<React.RefObject<HTMLInputElement>>>([]);
-  const items: any[] = [{ label: "Home",command :()=>scrollDown(0) }];
-  function scrollDown(headingIndex : number) {
-    dynamicRefs.current.push(React.createRef<HTMLInputElement>());
+  const dynamicRefs = useRef({});
+  const items: any[] = [{ label: "Home",command :()=>scrollDown("Home") }];
+  (dynamicRefs.current as any)["Home"]=React.createRef<HTMLInputElement>();
+  function scrollDown(heading : string) {
     window.scrollTo({
-      top: dynamicRefs.current[headingIndex].current!.offsetTop-(window.innerHeight * 0.1),
+      top: (dynamicRefs.current as any)[`${heading}`].current!.offsetTop-(window.innerHeight * 0.1),
       behavior: 'smooth',
     });
 
   }
   
-  Object.keys(data).forEach((heading: string, index: number) => {
-    if (heading !== "resumeConfig" && heading !== "personalDetails") {
-      items.push({ label: heading, command :()=>scrollDown(index)});
+  const not_to_include = ["resumeConfig","personalDetails","_id","__v"];
+
+  Object.keys(data).forEach((heading: string) => {
+    if (!not_to_include.includes(heading)) {
+      items.push({ label: heading, command :()=>scrollDown(heading)});
+      (dynamicRefs.current as any)[`${heading}`]=React.createRef<HTMLInputElement>();
     }
-    dynamicRefs.current.push(React.createRef<HTMLInputElement>());
   });
 
   const start = (
@@ -36,20 +38,20 @@ function StandardTemplate({ data }: any) {
       <div >
         <Menubar  model={items} start={start}  ref={menubarRef}/>
       </div>
-      <div className={styles.homeContainer} ref={dynamicRefs.current[0]}>
+      <div className={styles.homeContainer} ref={(dynamicRefs.current as any).Home}>
         <Home data={data} />
       </div>
-      <div className={styles.homeContainer} ref={dynamicRefs.current[2]}>
-        <Technologies data={data} />
+      <div className={styles.homeContainer} ref={(dynamicRefs.current as any).Award}>
+        <Awards data={data} />
       </div>
-      <div className={styles.homeContainer} ref={dynamicRefs.current[3]}>
+      <div className={styles.homeContainer} ref={(dynamicRefs.current as any).Education}>
         <Education data={data} />
       </div>
-      <div className={styles.homeContainer} ref={dynamicRefs.current[4]}>
+      <div className={styles.homeContainer} ref={(dynamicRefs.current as any)['Professional Experience']}>
         <ProffesionalExperience data={data} />
       </div>
-      <div className={styles.homeContainer} ref={dynamicRefs.current[5]}>
-        <Awards data={data} />
+      <div className={styles.homeContainer}  ref={(dynamicRefs.current as any).Technologies}>
+        <Technologies data={data} />
       </div>
     </>
   );

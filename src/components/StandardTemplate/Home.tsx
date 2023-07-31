@@ -39,8 +39,8 @@ function Home({ data }: any) {
       variants={scaleUpVariants}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-  <Image src={data.personalDetails.photo} className={styles.photo} width={500}
-      height={500} alt="User Photo"/>
+  {/* <Image src={data.personalDetails.photo} className={styles.photo} width={500}
+      height={500} alt="User Photo"/> */}
       </motion.div>
   </>
   )
