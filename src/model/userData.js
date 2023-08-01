@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-    _id: { type: Number, required: true, alias: 'customId' },
+    _id: { type: String, required: true, alias: 'customId' },
     resumeConfig: {
       color: { type: String, default: 'blue' },
       template: { type: String, default: 'standard' },

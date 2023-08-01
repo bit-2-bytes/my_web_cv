@@ -19,11 +19,11 @@ function CVCreator() {
   const handleSubmit = async (values: any) => {
      await axios.put('/api/updateData/', values)
      .then(()=>{
-      router.push('/myCV/'+123);
+      router.push('/myCV/ajai-s-s');
     })
   };
   const initialValues = {
-    "_id" : 123,
+    "_id" : "ajai-s-s",
     resumeConfig: {
       color: 'blue',
       template: 'standard',

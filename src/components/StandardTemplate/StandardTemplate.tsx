@@ -21,7 +21,7 @@ function StandardTemplate({ data }: any) {
 
   }
   
-  const not_to_include = ["resumeConfig","personalDetails","_id","__v"];
+  const not_to_include = ["resumeConfig","personalDetails","_id","__v","Projects","Certificates"];
 
   Object.keys(data).forEach((heading: string) => {
     if (!not_to_include.includes(heading)) {
