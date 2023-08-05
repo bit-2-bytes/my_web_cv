@@ -12,11 +12,15 @@
   top: 0px;
   left: 0px;
   position: absolute;
-  background: rgb(68, 105, 247);
   background: linear-gradient(
-    238deg,
-    rgba(68, 105, 247, 1) 0%,
-    rgba(246, 91, 245, 1) 100%
+    -45deg,
+    #673ab7 0%,
+    #e91e63 20%,
+    #ff4081 40%,
+    #e91e63 45%,
+    #ff4081 60%,
+    #e91e63 80%,
+    #673ab7 100%
   );
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,6 +28,7 @@
   background-attachment: fixed;
   color: white;
 }
+
 
 .innerContainer{
   top: 5%;
@@ -96,26 +101,29 @@
  font-size: 60px;
  line-height: 120px;
 }
-.button{
-  background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
-    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    /* backdrop-filter: blur(6px); */
-    border-radius: 15px;
-    border: none;
-    color: white;
-    padding: 10px;
-    width: max-content;
-    cursor: pointer;
-    font-size: 20px;
-    text-align:center;
-    transition: all .4s ease-in-out;
-    background-size: 300% 100%;
-    font-weight: 600;
+.button {
+  background-image: linear-gradient(to right,  #ff6624, #ffca75, #ffca75, #ff6624);
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75), 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75), 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  border-radius: 5px;
+  letter-spacing: 1px;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  background-size: 300% 100%;
+  font-weight: 600;
+  padding: 12px 25px;
+  transition: all .4s ease-in-out;
 }
+
 .button:hover {
   background-position: 100% 0;
 }
+
+
 .creditsSection{
   display: flex;
  flex-direction: column;

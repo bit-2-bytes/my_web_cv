@@ -3,7 +3,7 @@ import { Field, FieldArray } from "formik";
 import { InputText } from "primereact/inputtext";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Button } from "primereact/button";
-import { InputTextarea } from 'primereact/inputtextarea';
+import { InputTextarea } from "primereact/inputtextarea";
 
 function Education({ values }: any) {
   const handleAdd = (push: any) => {
@@ -26,7 +26,23 @@ function Education({ values }: any) {
           <>
             <Accordion activeIndex={0}>
               {values.Education.map((value: any, index: number) => (
-                <AccordionTab header={`Education-${index + 1}`} key={`Education-${index + 1}`}>
+                <AccordionTab
+                  header={
+                    <>
+                      <div className="p-accordion-header-display">
+                        Education-{index + 1}
+                        <Button
+                          icon="pi pi-trash"
+                          severity="danger"
+                          text
+                          className="p-button-delete"
+                          onClick={() => handleRemove(remove, index)}
+                        />
+                      </div>
+                    </>
+                  }
+                  key={`Education-${index + 1}`}
+                >
                   <div key={index} className="p-sameline">
                     <div className="p-field">
                       <label htmlFor="degree">Degree</label>
@@ -68,22 +84,19 @@ function Education({ values }: any) {
                         placeholder="Eg: I was a university topper and passed with 98.5 CGPA"
                       />
                     </div>
-                    <Button
-                      icon="pi pi-trash"
-                      severity="danger"
-                      text
-                      className="p-button-delete"
-                      onClick={() => handleRemove(remove, index)}
-                    />
                   </div>
                 </AccordionTab>
               ))}
             </Accordion>
-            <Button
-              icon="pi pi-plus"
-              className="p-button-add"
-              onClick={() => handleAdd(push)}
-            />
+            <div className="add-more-container">
+              <Button
+                icon="pi pi-plus"
+                type="button"
+                label="Add More Education Details"
+                className="p-button-add"
+                onClick={() => handleAdd(push)}
+              />
+            </div>
           </>
         )}
       </FieldArray>

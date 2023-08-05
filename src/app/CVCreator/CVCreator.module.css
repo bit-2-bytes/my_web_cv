@@ -41,9 +41,7 @@
     color: rgb(207, 207, 208);
     padding: 15px;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    overflow-x: hidden;
 }
 .forms{
     display: flex;

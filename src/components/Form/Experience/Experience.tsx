@@ -25,7 +25,20 @@ function Experience({ values }: any) {
           <>
             <Accordion activeIndex={0}>
               {values["Professional Experience"].map((value: any, index: number) => (
-                <AccordionTab header={`Professional Experience-${index + 1}`} key={`Professional Experience-${index + 1}`}>
+                <AccordionTab header={
+                  <>
+                    <div className="p-accordion-header-display">
+                      Proffesional Experience-{index + 1}
+                      <Button
+                        icon="pi pi-trash"
+                        severity="danger"
+                        text
+                        className="p-button-delete"
+                        onClick={() => handleRemove(remove, index)}
+                      />
+                    </div>
+                  </>
+                } key={`Professional Experience-${index + 1}`}>
                   <div key={index} className="p-sameline">
                     <div className="p-field">
                       <label htmlFor="organisation">Organisation</label>
@@ -59,22 +72,20 @@ function Experience({ values }: any) {
                         placeholder="Eg: I lead a team of 10 memebers in a most sought after project"
                       />
                     </div>
-                    <Button
-                      icon="pi pi-trash"
-                      severity="danger"
-                      text
-                      className="p-button-delete"
-                      onClick={() => handleRemove(remove, index)}
-                    />
+
                   </div>
                 </AccordionTab>
               ))}
             </Accordion>
-            <Button
-              icon="pi pi-plus"
-              className="p-button-add"
-              onClick={() => handleAdd(push)}
-            />
+            <div className="add-more-container">
+              <Button
+                icon="pi pi-plus"
+                type="button"
+                label="Add More Experience"
+                className="p-button-add"
+                onClick={() => handleAdd(push)}
+              />
+            </div>
           </>
         )}
       </FieldArray>

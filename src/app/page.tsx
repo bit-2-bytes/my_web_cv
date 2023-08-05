@@ -27,7 +27,7 @@ export default function Home() {
           A no code Web based portfolio creator for all professionals and
           graduates. 
         </p>
-        <button className={styles.button} onClick={openResumeCreator}>Create My Portfolio/CV</button>
+        <button className={styles.button} onClick={openResumeCreator}>Create My Portfolio Website</button>
         
         </div>
         <Player

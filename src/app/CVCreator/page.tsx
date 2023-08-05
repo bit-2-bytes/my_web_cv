@@ -187,7 +187,7 @@ function CVCreator() {
                 <div className={cvstyles.formHeading}>
                   {selectedMenu}
                   <div className="saveButtonContainer">
-                    <button type="submit" className="saveButton">Save and Publish</button>
+                    <button type="submit" className="saveButton">Publish</button>
                   </div>
                 </div>
                 <div className={cvstyles.formFields}>

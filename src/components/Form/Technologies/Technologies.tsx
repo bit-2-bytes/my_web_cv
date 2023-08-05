@@ -15,31 +15,45 @@ function Technologies({ values }: any) {
   return (
     <>
       <p>List Down the all technologies you know( *Max 10)</p>
-      <FieldArray name="Technologies" >
+      <FieldArray name="Technologies">
         {({ push, remove }: any) => (
           <>
             {values.Technologies.map((value: any, index: number) => (
               <div key={index} className="p-sameline">
-                <Field as={InputText} name={`Technologies.${index}`} placeholder="Enter technology"/>
+                <Field
+                  as={InputText}
+                  name={`Technologies.${index}`}
+                  placeholder="Enter technology"
+                />
 
                 <Button
                   icon="pi pi-trash"
-                  severity="danger" text
+                  severity="danger"
+                  text
                   className="p-button-delete"
                   onClick={() => handleRemove(remove, index)}
                 />
+                <Button
+                  icon="pi pi-plus"
+                  className="p-button-add"
+                  type="button"
+                  label="Add More Technologies"
+                  style={{
+                    display:
+                      index === values.Technologies.length - 1
+                        ? "block"
+                        : "none",
+                  }}
+                  onClick={() => handleAdd(push, "")}
+                />
+              </div>
+            ))}
             <Button
               icon="pi pi-plus"
               className="p-button-add"
-              style={{display : index ===values.Technologies.length-1? "block" : "none"}}
-              onClick={() => handleAdd(push, "")}
-            />
-              </div>
-            ))}
-<Button
-              icon="pi pi-plus"
-              className="p-button-add"
-              style={{display : values.Technologies.length=== 0? "block" : "none"}}
+              style={{
+                display: values.Technologies.length === 0 ? "block" : "none",
+              }}
               onClick={() => handleAdd(push, "")}
             />
           </>

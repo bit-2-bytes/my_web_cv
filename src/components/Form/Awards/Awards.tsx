@@ -24,7 +24,20 @@ function Awards({ values }: any) {
           <>
             <Accordion activeIndex={0}>
               {values.Award.map((value: any, index: number) => (
-                <AccordionTab header={`Award-${index + 1}`} key={`Award-${index + 1}`}>
+                <AccordionTab header={
+                  <>
+                    <div className="p-accordion-header-display">
+                      Award-{index + 1}
+                      <Button
+                        icon="pi pi-trash"
+                        severity="danger"
+                        text
+                        className="p-button-delete"
+                        onClick={() => handleRemove(remove, index)}
+                      />
+                    </div>
+                  </>
+                } key={`Award-${index + 1}`}>
                   <div key={index} className="p-sameline">
                     <div className="p-field">
                       <label htmlFor="name">Name</label>
@@ -50,22 +63,20 @@ function Awards({ values }: any) {
                         placeholder="Eg: For composing a song named Hosonna.."
                       />
                     </div>
-                    <Button
-                      icon="pi pi-trash"
-                      severity="danger"
-                      text
-                      className="p-button-delete"
-                      onClick={() => handleRemove(remove, index)}
-                    />
+
                   </div>
                 </AccordionTab>
               ))}
             </Accordion>
-            <Button
-              icon="pi pi-plus"
-              className="p-button-add"
-              onClick={() => handleAdd(push)}
-            />
+            <div className="add-more-container">
+              <Button
+                icon="pi pi-plus"
+                type="button"
+                label="Add More Award Details"
+                className="p-button-add"
+                onClick={() => handleAdd(push)}
+              />
+            </div>
           </>
         )}
       </FieldArray>

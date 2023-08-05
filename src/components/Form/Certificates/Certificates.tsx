@@ -24,7 +24,20 @@ function Certificates({ values }: any) {
           <>
             <Accordion activeIndex={0}>
               {values.Certificates.map((value: any, index: number) => (
-                <AccordionTab header={`Certificate-${index + 1}`} key={`Certificates-${index + 1}`}>
+                <AccordionTab header={
+                  <>
+                    <div className="p-accordion-header-display">
+                      Certtifcation-{index + 1}
+                      <Button
+                        icon="pi pi-trash"
+                        severity="danger"
+                        text
+                        className="p-button-delete"
+                        onClick={() => handleRemove(remove, index)}
+                      />
+                    </div>
+                  </>
+                } key={`Certificates-${index + 1}`}>
                   <div key={index} className="p-sameline">
                     <div className="p-field">
                       <label htmlFor="name">Name</label>
@@ -50,22 +63,20 @@ function Certificates({ values }: any) {
                         placeholder="Eg: For attending a  3 month course on python programming"
                       />
                     </div>
-                    <Button
-                      icon="pi pi-trash"
-                      severity="danger"
-                      text
-                      className="p-button-delete"
-                      onClick={() => handleRemove(remove, index)}
-                    />
+
                   </div>
                 </AccordionTab>
               ))}
             </Accordion>
-            <Button
-              icon="pi pi-plus"
-              className="p-button-add"
-              onClick={() => handleAdd(push)}
-            />
+            <div className="add-more-container">
+              <Button
+                icon="pi pi-plus"
+                type="button"
+                label="Add More Certificate Details"
+                className="p-button-add"
+                onClick={() => handleAdd(push)}
+              />
+            </div>
           </>
         )}
       </FieldArray>
