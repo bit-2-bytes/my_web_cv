@@ -92,7 +92,7 @@ function Education({ values }: any) {
               <Button
                 icon="pi pi-plus"
                 type="button"
-                label="Add More Education Details"
+                label="Add Education Details"
                 className="p-button-add"
                 onClick={() => handleAdd(push)}
               />

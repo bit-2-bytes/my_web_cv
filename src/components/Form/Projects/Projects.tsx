@@ -71,7 +71,7 @@ function Projects({ values }: any) {
               <Button
                 icon="pi pi-plus"
                 type="button"
-                label="Add More Project Details"
+                label="Add Project Details"
                 className="p-button-add"
                 onClick={() => handleAdd(push)}
               />

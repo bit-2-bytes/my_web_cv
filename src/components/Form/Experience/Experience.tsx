@@ -81,7 +81,7 @@ function Experience({ values }: any) {
               <Button
                 icon="pi pi-plus"
                 type="button"
-                label="Add More Experience"
+                label="Add Experience Details"
                 className="p-button-add"
                 onClick={() => handleAdd(push)}
               />

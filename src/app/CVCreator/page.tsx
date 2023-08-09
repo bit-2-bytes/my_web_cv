@@ -19,7 +19,8 @@ function CVCreator() {
   const handleSubmit = async (values: any) => {
      await axios.put('/api/updateData/', values)
      .then(()=>{
-      router.push('/myCV/ajai-s-s');
+      const routeURL = '/myCV/ajai-s-s';
+      window.open(routeURL, '_blank');
     })
   };
   const initialValues = {
@@ -42,48 +43,12 @@ function CVCreator() {
       stackoverflow: '',
       leetcode: '',
     },
-    Technologies: [''],
-    Education: [
-      {
-        degree: '',
-        institution: '',
-        year: '',
-        specialisation: '',
-        achievements: '',
-      },
-      // Add more education data here
-    ],
-    "Professional Experience": [
-      {
-        organisation: '',
-        role: '',
-        year: '',
-        "project details": '',
-      },
-      // Add more experience data here
-    ],
-    Award: [
-      {
-        name: '',
-        description: '',
-        year: '',
-      },
-      // Add more award data here
-    ],Certificates: [
-      {
-        name: '',
-        description: '',
-        year: '',
-      },
-      // Add more award data here
-    ],Projects: [
-      {
-        name: '',
-        description: '',
-        year: '',
-      },
-      // Add more award data here
-    ]
+    Technologies: [],
+    Education: [],
+    "Professional Experience": [],
+    Award: [],
+    Certificates: [],
+    Projects: []
   };
   async function showWebCV() {
     // await axios.put('/api/updateData/',{
@@ -187,7 +152,7 @@ function CVCreator() {
                 <div className={cvstyles.formHeading}>
                   {selectedMenu}
                   <div className="saveButtonContainer">
-                    <button type="submit" className="saveButton">Publish</button>
+                    <button type="submit" className="saveButton">Save and Publish</button>
                   </div>
                 </div>
                 <div className={cvstyles.formFields}>

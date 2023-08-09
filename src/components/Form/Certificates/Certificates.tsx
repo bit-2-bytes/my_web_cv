@@ -72,7 +72,7 @@ function Certificates({ values }: any) {
               <Button
                 icon="pi pi-plus"
                 type="button"
-                label="Add More Certificate Details"
+                label="Add Certificate Details"
                 className="p-button-add"
                 onClick={() => handleAdd(push)}
               />

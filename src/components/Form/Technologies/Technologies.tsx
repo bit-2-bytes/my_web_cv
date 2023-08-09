@@ -23,7 +23,7 @@ function Technologies({ values }: any) {
                 <Field
                   as={InputText}
                   name={`Technologies.${index}`}
-                  placeholder="Enter technology"
+                  placeholder={"Enter technology-"+(index+1)}
                 />
 
                 <Button
@@ -37,7 +37,7 @@ function Technologies({ values }: any) {
                   icon="pi pi-plus"
                   className="p-button-add"
                   type="button"
-                  label="Add More Technologies"
+                  label="Add Technologies"
                   style={{
                     display:
                       index === values.Technologies.length - 1
@@ -51,6 +51,8 @@ function Technologies({ values }: any) {
             <Button
               icon="pi pi-plus"
               className="p-button-add"
+              type="button"
+              label="Add Technologies"
               style={{
                 display: values.Technologies.length === 0 ? "block" : "none",
               }}
