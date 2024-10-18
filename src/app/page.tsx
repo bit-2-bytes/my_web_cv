@@ -38,7 +38,7 @@ export default function Home() {
         >
         </Player>
         </div>
-        <p className={styles.creditsSection}>Made with  ❤️ by Ajai S S, Abhishek Kumar and Shivam Saini</p>
+        <p className={styles.creditsSection}>Made with  ❤️ by Ajai S S</p>
       </div>
     </div>
   );
